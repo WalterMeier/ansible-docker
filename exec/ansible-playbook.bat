@@ -1,0 +1,1 @@
+docker run --rm -i -v %cd%:/ansible/playbooks ansible ansible-playbook %*
