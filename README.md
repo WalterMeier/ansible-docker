@@ -73,3 +73,7 @@ can be run on any system as long is it has `docker`, including Windows.
 than the standard way of installing on a native linux machine.
 It has the following known limitation:
     * It assumes that `ansible.cfg` will only exist in the current working directory
+    * The scripts in `exec` dir run the `ansible` container with the `--rm` option.
+    Meaning that you'll need to save your roles in the current work dir,
+    otherwise they will be saved inside the container and lost after the container is removed. 
+    `ansible.cfg` line that can be used for this purpose: `roles_path = ./roles`
